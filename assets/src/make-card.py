@@ -60,6 +60,6 @@ row("c-clarus", "clarus.svg", "Clarus", "Windows app", "Screenshots and screen r
 row("c-sams", "sams.png", "SAMS", "Client project", "Equipment booking for the UOWD Media Studio, live 14 days after the handover.")
 row("c-upchirp", "upchirp.svg", "Upchirp", "Open source", "Ask a radar what it saw: an AI agent over offline sensor data, built with a friend.")
 row("c-catsentry", "catsentry.svg", "Cat Sentry", "Open source", "Local object detection on a home camera. Pings Telegram when the cat is up at night.")
-row("c-tract", MERGE, "sonos/tract", "Contributor", "Six pull requests merged into Sonos's ONNX inference engine, each one measured.")
+row("c-tract", "tract.svg", "sonos/tract", "Contributor", "Six pull requests merged into Sonos's ONNX inference engine, each one measured.")
 row("c-writing", PEN, "Writing", "12 posts", "Write-ups on bugs, measurements and my own mistakes.", last=True)
 print("ok")
