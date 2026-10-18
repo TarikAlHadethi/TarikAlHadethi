@@ -35,13 +35,13 @@ def render(name, w, h, bg, fg, body, lw=360):
                    stderr=subprocess.DEVNULL, stdout=subprocess.DEVNULL, check=True)
 
 def head(label, title, line, logo=None):
-    img = f'<img src="img/{logo}.svg">' if logo else ""
+    img = f'<img src="img/{logo}">' if logo else ""
     return f'<div class=lab>{label}</div><div class=name>{img}{title}</div><div class=line>{line}</div>'
 
 # hero: the site's paper, ink and T tile; the four marks laid on it like cards on a desk
-icons = "".join(f'<img src="img/{n}.svg" style="position:absolute;width:86px;height:86px;border-radius:21px;'
+icons = "".join(f'<img src="img/{n}.{"png" if n == "sams" else "svg"}" style="position:absolute;width:86px;height:86px;border-radius:21px;'
                 f'left:{x}px;top:{y}px;transform:rotate({r}deg);box-shadow:0 14px 30px rgba(27,22,16,.22)">'
-                for n, x, y, r in (("longtable", 600, 58, -9), ("clarus", 700, 40, 6), ("upchirp", 628, 158, 7), ("catsentry", 730, 148, -5)))
+                for n, x, y, r in (("longtable", 600, 58, -9), ("clarus", 700, 40, 6), ("upchirp", 628, 158, 7), ("sams", 730, 148, -5)))
 render("hero", 880, 290, "linear-gradient(160deg,#ece2d0,#e1d5be)", "#1b1610", f"""
 <div style="display:flex;align-items:center;gap:16px;margin-top:6px">
   <div style="width:58px;height:58px;border-radius:17px;background:#1b1610;color:#f8f3ea;display:grid;place-items:center;font:600 32px Lora">T</div>
@@ -51,25 +51,35 @@ render("hero", 880, 290, "linear-gradient(160deg,#ece2d0,#e1d5be)", "#1b1610", f
  {''.join(f'<span style="font:500 12.5px Mono;padding:6px 11px;border-radius:99px;background:#f6f0e5;color:#6a6154">{c}</span>' for c in ("Director, Clarus LLC", "Cyber Security · 2028", "Python · TypeScript · Rust"))}
 </div>{icons}""")
 
+LT_HEAD = head("Open source · live at longtable.chat", "Longtable", "Your team, their AIs and your client, at one table. Every AI answers; the table gives one.", "longtable.svg")
+# A: the app itself
 render("longtable", 880, 330, "#f8f6f3", "#24312c",
-       head("Open source · live at longtable.chat", "Longtable", "Your team, their AIs and your client, at one table. Every AI answers; the table gives one.", "longtable")
-       + '<img class=shot src="img/longtable.png" style="left:430px;top:46px;width:600px">', lw=330)
+       LT_HEAD + '<img class=shot src="img/longtable-app.png" style="left:388px;top:40px;width:600px">', lw=330)
+# B: zoomed in on the table's one answer and the client's side
+render("longtable-b", 880, 330, "#f8f6f3", "#24312c",
+       LT_HEAD + '<img class=shot src="img/longtable-answer.png" style="left:372px;top:44px;width:640px">', lw=310)
+# C: the landing page's tree, every person's AI feeding the table, shown whole
+render("longtable-c", 880, 372, "#f8f6f3", "#24312c",
+       head("Open source · longtable.chat", "Longtable", "Your team, their AIs and your client, at one table. Every AI answers; the table gives one.", "longtable.svg")
+       + '<img src="img/longtable-tree.png" style="position:absolute;left:336px;top:30px;width:520px;-webkit-mask-image:radial-gradient(75% 80% at 50% 50%,#000 70%,transparent)">', lw=270)
 
 render("clarus", 436, 330, "radial-gradient(120% 90% at 80% 0%,#3a2a12,#120d07 70%)", "#f6e9cf",
-       head("Commercial · Windows", "Clarus", "Screenshots and screen recording, built alone from GPU capture to Stripe.", "clarus")
+       head("Commercial · Windows", "Clarus", "Screenshots and screen recording, built alone from GPU capture to Stripe.", "clarus.svg")
        + '<img class=shot src="img/clarus-app.png" style="left:46px;top:168px;width:420px;box-shadow:0 18px 50px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.08)">', lw=340)
 
 render("sams", 436, 330, "linear-gradient(150deg,#ece9fb,#dfeef1)", "#1b1f2a",
-       head("Client project · UOWD Media Studio", "Studio booking", "Live 14 days after the handover. 25 students now test it with real bookings.")
+       head("Client project · UOWD Media Studio", "Studio booking", "Live 14 days after the handover. 25 students now test it with real bookings.", "sams.png")
        + '<img class=shot src="img/sams-today.png" style="left:46px;top:168px;width:420px">', lw=340)
 
 render("upchirp", 436, 330, "radial-gradient(110% 90% at 85% 0%,#24502f,#10241a 70%)", "#eaefd1",
-       head("Open source · with a friend", "Upchirp", "Ask a radar what it saw: an AI agent over offline sensor data.", "upchirp")
+       head("Open source · with a friend", "Upchirp", "Ask a radar what it saw: an AI agent over offline sensor data.", "upchirp.svg")
        + '<img class=shot src="img/upchirp-live.png" style="left:46px;top:168px;width:440px;box-shadow:0 18px 50px rgba(0,0,0,.55),0 0 0 1px rgba(234,239,209,.12)">', lw=340)
 
 render("catsentry", 436, 330, "radial-gradient(110% 90% at 85% 0%,#4b3424,#241a15 70%)", "#fbefe4",
-       head("Open source · Python", "Cat Sentry", "Messages me when the cat gets down at night. Silent when only people move.", "catsentry")
-       + '<img class=shot src="img/catsentry-demo.png" style="left:46px;top:168px;width:440px;box-shadow:0 18px 50px rgba(0,0,0,.55),0 0 0 1px rgba(251,239,228,.1)">', lw=340)
+       head("Open source · Python", "Cat Sentry", "Messages me when the cat gets down at night. Silent when only people move.", "catsentry.svg")
+       + '<div style="position:absolute;left:282px;top:40px;width:136px;padding:6px;border-radius:30px;background:#0f0b08;'
+         'box-shadow:0 22px 50px rgba(0,0,0,.6),0 0 0 1.5px rgba(251,239,228,.14);transform:rotate(4deg)">'
+         '<img src="img/catsentry-phone.png" style="display:block;width:136px;border-radius:22px"></div>', lw=215)
 
 rows = "".join(f'<div style="display:flex;justify-content:space-between;font:500 13.5px Mono;padding:9px 0;border-top:1px solid rgba(248,243,234,.12)">'
                f'<span style="opacity:.7">{a}</span><span>{b} <span style="color:#7fc7ff">→ {c}</span></span></div>'
