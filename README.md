@@ -1,24 +1,22 @@
-# Tarik Al Hadethi
+<a href="https://tarikalhadethi.com"><img src="assets/tiles/hero.png" width="100%" alt="Tarik Al Hadethi. Software engineer in Dubai. I build end to end, and I work directly with the people who use what I build."></a>
 
-Systems engineer. Rust, Windows internals, ML inference runtimes.
-Penultimate-year CS student in Dubai. Director of Clarus LLC.
+<a href="https://github.com/TarikAlHadethi/Longtable"><img src="assets/tiles/longtable.png" width="100%" alt="Longtable: your team, their AIs and your client, at one table. Open source, live at longtable.chat."></a>
 
-### Open source
+<a href="https://getclarus.dev"><img src="assets/tiles/clarus.png" width="49%" alt="Clarus: screenshots and screen recording for Windows, built alone from GPU capture to Stripe."></a> <a href="https://tarikalhadethi.com/writing/nine-emails-to-a-live-product/"><img src="assets/tiles/sams.png" width="49%" alt="Studio booking system for the UOWD Media Studio, live 14 days after the handover, with 25 students testing it with real bookings."></a>
 
-**[sonos/tract](https://github.com/sonos/tract)** - Sonos's production ONNX inference engine, in Rust. Five pull requests merged.
+<a href="https://github.com/TarikAlHadethi/upchirp"><img src="assets/tiles/upchirp.png" width="49%" alt="Upchirp: ask a radar what it saw, an AI agent over offline sensor data."></a> <a href="https://github.com/TarikAlHadethi/Cat-Sentry"><img src="assets/tiles/catsentry.png" width="49%" alt="Cat Sentry: messages me when the cat gets down at night, silent when only people move."></a>
 
-- **Shape parser bug.** Reported in [#2724](https://github.com/sonos/tract/issues/2724): the ONNX shape parser evaluated `1/2` with integer division, so `floor(W/2 - 1/2) + 1` collapsed to `W/2 + 1` and every even input width got a shape one too large, with no error raised. Fixed in two merged pull requests: [#2730](https://github.com/sonos/tract/pull/2730), which lets tract's public API pass loader options, and [#2734](https://github.com/sonos/tract/pull/2734), which parses shape expressions as exact fractions and removes `floor` from tract's own parser.
-- **Performance slices.** Split another contributor's stalled kernel pull request into reviewable pieces, then measured and tested each one: [#2829](https://github.com/sonos/tract/pull/2829) nearest upsample in one pass, [#2830](https://github.com/sonos/tract/pull/2830) a 2x2 max pool 3.5x faster, and [#2831](https://github.com/sonos/tract/pull/2831) a 2x2 stride-2 deconvolution 3.7x faster, the last two bit-identical to the old output. Co-authored with the original contributor.
-- **Measurements.** Kernel selection across 29 matrix-multiply shapes: a slower kernel chosen on 12, worst case about 2x ([#2734](https://github.com/sonos/tract/pull/2734#issuecomment-5450399181)). `--threads 1` running on every core ([#2894](https://github.com/sonos/tract/issues/2894)), and how PaddleOCR models scale with threads, per operation ([#2899](https://github.com/sonos/tract/issues/2899)).
+<a href="https://github.com/sonos/tract/pulls?q=is%3Apr+author%3ATarikAlHadethi+is%3Amerged"><img src="assets/tiles/tract.png" width="49%" alt="Six pull requests merged into sonos/tract: 2x2 max pool 8.82 to 2.55 ms, stride-2 deconvolution 5.71 to 1.54 ms, direct convolution 237.6 to 211.6 ms."></a> <a href="https://tarikalhadethi.com/writing"><img src="assets/tiles/writing.png" width="49%" alt="Twelve write-ups on bugs, measurements and my own mistakes."></a>
 
-**[crabnebula-dev/drag-rs](https://github.com/crabnebula-dev/drag-rs)** - [#94](https://github.com/crabnebula-dev/drag-rs/issues/94): a `DoDragDrop` that never returns wedges the caller's main thread, diagnosed with instruction-pointer samples and a user-versus-kernel CPU split, with a demonstrated recovery. [#95](https://github.com/crabnebula-dev/drag-rs/pull/95) adds an opt-in timeout that cancels it.
+<p align="center">
+<a href="https://tarikalhadethi.com">tarikalhadethi.com</a> · <a href="https://www.linkedin.com/in/tarikalhadethi">LinkedIn</a> · tarikalhadethi@gmail.com
+</p>
 
-**[tauri-apps/tao](https://github.com/tauri-apps/tao)** - [#1318](https://github.com/tauri-apps/tao/issues/1318): a window minimised with Win+D loses its minimised state on the next style change.
+<details>
+<summary>Open source, with links</summary>
 
-### Building
+- **[sonos/tract](https://github.com/sonos/tract)**: a shape bug where `1/2` read as 0 ([#2724](https://github.com/sonos/tract/issues/2724)), fixed in [#2730](https://github.com/sonos/tract/pull/2730) and [#2734](https://github.com/sonos/tract/pull/2734); four measured kernel slices co-authored with their original contributor ([#2829](https://github.com/sonos/tract/pull/2829), [#2830](https://github.com/sonos/tract/pull/2830), [#2831](https://github.com/sonos/tract/pull/2831), [#2916](https://github.com/sonos/tract/pull/2916)).
+- **[crabnebula-dev/drag-rs](https://github.com/crabnebula-dev/drag-rs)**: a drag that never returns wedges the whole app ([#94](https://github.com/crabnebula-dev/drag-rs/issues/94)), with an opt-in timeout in [#95](https://github.com/crabnebula-dev/drag-rs/pull/95).
+- **[tauri-apps/tao](https://github.com/tauri-apps/tao)**: a window minimised with Win+D loses that state on the next style change ([#1318](https://github.com/tauri-apps/tao/issues/1318)).
 
-**[Clarus](https://getclarus.dev)** - a code-signed commercial Windows app for screenshots and screen recording, which I designed and built. Rust, Tauri, TypeScript, Postgres, Stripe. On-device OCR, a non-linear video editor, signed auto-updates.
-
-### Contact
-
-tarikalhadethi@gmail.com
+</details>
