@@ -14,7 +14,7 @@ FONTS = """@font-face{font-family:Lora;src:url(lora.woff2) format("woff2");font-
 @font-face{font-family:Mono;src:url(jetbrains-mono.woff2) format("woff2");font-weight:400 700}"""
 
 def shot(name, h, body, top=False, bottom=False):
-    r = f"{'24px 24px' if top else '0 0'} {'24px 24px' if bottom else '0 0'}"
+    r = "20px"   # GitHub leaves a few pixels between stacked images, so every row is its own rounded card
     html = (f'<!doctype html><meta charset=utf-8><style>{FONTS}html,body{{margin:0;background:transparent}}'
             f'.c{{width:{W}px;height:{h}px;box-sizing:border-box;background:{PAPER};color:{INK};border-radius:{r};'
             f'font-family:Inst,Segoe UI,sans-serif;position:relative;overflow:hidden}}</style><div class=c>{body}</div>')
@@ -45,8 +45,7 @@ PEN = ('<svg width="48" height="48" viewBox="0 0 64 64" style="display:block"><r
 
 def row(name, logo, title, kind, line, last=False):
     lg = logo if logo.startswith("<") else f'<img src="img/{logo}" style="width:48px;height:48px;border-radius:13px;display:block">'
-    shot(name, 104, f"""
-<div style="position:absolute;left:44px;right:44px;top:0;height:1px;background:{LINE}"></div>
+    shot(name, 96, f"""
 <div style="position:absolute;left:44px;right:44px;top:0;bottom:0;display:flex;align-items:center;gap:18px">
   <div style="flex:none;border-radius:13px;box-shadow:0 0 0 1px rgba(27,22,16,.08)">{lg}</div>
   <div style="flex:1;min-width:0">
