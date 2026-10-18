@@ -19,7 +19,7 @@ def shot(name, h, body, top=False, bottom=False):
             f'.c{{width:{W}px;height:{h}px;box-sizing:border-box;background:{PAPER};color:{INK};border-radius:{r};'
             f'font-family:Inst,Segoe UI,sans-serif;position:relative;overflow:hidden}}</style><div class=c>{body}</div>')
     p = os.path.join(HERE, f"_{name}.html"); open(p, "w", encoding="utf-8").write(html)
-    subprocess.run([CHROME, "--headless=new", "--disable-gpu", "--hide-scrollbars", "--force-device-scale-factor=2",
+    subprocess.run([CHROME, "--headless=new", "--disable-gpu", "--hide-scrollbars", "--force-device-scale-factor=3",
                     "--default-background-color=00000000", f"--window-size={W},{h}",
                     f"--screenshot={os.path.join(OUT, name + '.png')}", "file:///" + p.replace("\\", "/")],
                    stderr=subprocess.DEVNULL, stdout=subprocess.DEVNULL, check=True)
