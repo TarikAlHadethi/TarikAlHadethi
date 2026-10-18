@@ -2,9 +2,9 @@
 
 <a href="https://github.com/TarikAlHadethi/Longtable"><img src="assets/tiles/longtable.png" width="100%" alt="Longtable: your team, their AIs and your client, at one table. Open source, live at longtable.chat."></a>
 
-<a href="https://getclarus.dev"><img src="assets/tiles/clarus.png" width="49%" alt="Clarus: screenshots and screen recording for Windows, built alone from GPU capture to Stripe."></a> <a href="https://tarikalhadethi.com/writing/nine-emails-to-a-live-product/"><img src="assets/tiles/sams.png" width="49%" alt="Studio booking system for the UOWD Media Studio, live 14 days after the handover, with 25 students testing it with real bookings."></a>
+<a href="https://getclarus.dev"><img src="assets/tiles/clarus.png" width="49%" alt="Clarus: screenshots and screen recording for Windows, built alone from GPU capture to Stripe."></a> <a href="https://tarikalhadethi.com/writing/nine-emails-to-a-live-product/"><img src="assets/tiles/sams.png" width="49%" alt="SAMS, the booking system for the UOWD Media Studio, live 14 days after the handover, with 25 students testing it with real bookings."></a>
 
-<a href="https://github.com/TarikAlHadethi/upchirp"><img src="assets/tiles/upchirp.png" width="49%" alt="Upchirp: ask a radar what it saw, an AI agent over offline sensor data."></a> <a href="https://github.com/TarikAlHadethi/Cat-Sentry"><img src="assets/tiles/catsentry.png" width="49%" alt="Cat Sentry: messages me when the cat gets down at night, silent when only people move."></a>
+<a href="https://github.com/TarikAlHadethi/upchirp"><img src="assets/tiles/upchirp.png" width="49%" alt="Upchirp: ask a radar what it saw, an AI agent over offline sensor data."></a> <a href="https://github.com/TarikAlHadethi/Cat-Sentry"><img src="assets/tiles/catsentry.png" width="49%" alt="Cat Sentry: local object detection on a home camera that pings Telegram when the cat is up at night."></a>
 
 <a href="https://github.com/sonos/tract/pulls?q=is%3Apr+author%3ATarikAlHadethi+is%3Amerged"><img src="assets/tiles/tract.png" width="49%" alt="Six pull requests merged into sonos/tract: 2x2 max pool 8.82 to 2.55 ms, stride-2 deconvolution 5.71 to 1.54 ms, direct convolution 237.6 to 211.6 ms."></a> <a href="https://tarikalhadethi.com/writing"><img src="assets/tiles/writing.png" width="49%" alt="Twelve write-ups on bugs, measurements and my own mistakes."></a>
 
